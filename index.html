@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
+            .hidden {
+                display: none !important;
+            }
+            h1 {
+                color: rgb(255, 236, 196);
+                font-size: 64px;
+                font-family:Arial;
+            font-weight:bold;
+            text-decoration: none;
+            }
+            .winner {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                z-index: 1;
+                height: 100vh;
+                width: 100vw;
+            }
+            
+             .myButton {
+            box-shadow:inset 0px 1px 0px 0px #9acc85;
+            background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+            background-color:#74ad5a;
+            border:1px solid #3b6e22;
+            /* display:inline-block; */
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:13px;
+            font-weight:bold;
+            padding:6px 12px;
+            text-decoration:none;
+            }
+            .myButton:hover {
+                background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+                background-color:#68a54b;
+            }
+            .myButton:active {
+                position:relative;
+                top:1px;
+            }
+        </style>
     </head>
     <body>
+        <div class="winner hidden">
+            <h1>You win!</h1>
+            <button type="button" class="myButton" onClick="window.location.reload()">Play again</button>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
