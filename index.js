@@ -1,7 +1,9 @@
+function generateGame() {
+
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cellsHorizontal = 14;
-const cellsVertical = 10;
+const cellsHorizontal = 3;
+const cellsVertical = 3;
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -224,3 +226,19 @@ Events.on(engine, 'collisionStart', event => {
         }
     });
 });
+
+
+const btn = document.querySelector('.myButton');
+
+btn.addEventListener('click', function(){
+    console.log('click');
+    World.clear(world);
+    Engine.clear(engine);
+    render.canvas.remove();
+    document.querySelector('.winner').classList.add('hidden');
+    generateGame();
+})
+
+}
+
+generateGame()
