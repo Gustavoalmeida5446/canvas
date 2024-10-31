@@ -1,6 +1,6 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cells = 5;
+const cells = 3;
 const width = 600;
 const height = 600;
 
@@ -176,13 +176,13 @@ document.addEventListener('keydown', event => {
     if (event.key === 'ArrowUp') {
         Body.setVelocity(ball, { x, y: y - 5 });
     }
-    if (event.keyCode === 68) {
+    if (event.key === 'ArrowRight') {
         Body.setVelocity(ball, { x: x + 5, y });
     }
-    if (event.keyCode === 83) {
+    if (event.key === 'ArrowDown') {
         Body.setVelocity(ball, { x, y: y + 5 });
     }
-    if (event.keyCode === 65) {
+    if (event.key === 'ArrowLeft') {
         Body.setVelocity(ball, { x: x - 5, y });
     }
 });
